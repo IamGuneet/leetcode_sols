@@ -1,14 +1,13 @@
 class Solution {
     public int[] buildArray(int[] nums) {
-                    int[] ans = new int[nums.length] ;
-
-        for(int element: nums){
-
-            ans[element] = nums[nums[element]]; 
-
+        int length = nums.length;
+        int[] newArr = new int[length];
+        int[] temp = nums;
+        
+        for(int i=0;i<length;i++){
+            newArr[i] = temp[temp[i]];
         }
-       
-                    return ans;
 
+        return newArr;
     }
 }
