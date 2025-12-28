@@ -1,11 +1,11 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen = {}
+        seen={}
 
-        for idx,val in enumerate(nums):
-            compliment = target - val
+        for index,val in enumerate(nums):
+            if target-val in seen:
+                return [seen[target-val],index]
+            else:
+                seen[val] = index
 
-            if compliment in seen:
-                return [seen[compliment],idx]
-            seen[val]=idx
         
