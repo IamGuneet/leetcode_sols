@@ -1,11 +1,7 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen={}
-
-        for index,val in enumerate(nums):
-            if target-val in seen:
-                return [seen[target-val],index]
-            else:
-                seen[val] = index
-
-        
+        for i in range(len(nums)):
+            twin = target - nums[i]  
+            for j in range(i+1,len(nums)):
+                if twin == nums[j]:
+                    return [i,j]
